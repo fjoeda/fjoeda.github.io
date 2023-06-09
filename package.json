@@ -13,8 +13,10 @@
     "react-type-animation": "^3.0.1",
     "web-vitals": "^2.1.4"
   },
-  "predeploy": "npm run build",
+  "homepage": "https://fjoeda.github.io",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
