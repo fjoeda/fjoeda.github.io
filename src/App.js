@@ -1,6 +1,5 @@
 import './App.css';
 import Identity from './components/landing/Identity';
-import Navbar from './components/landing/Navbar';
 
 function App() {
   return (
