@@ -61,7 +61,7 @@ function Identity() {
         </div>
       </div>
       <div className="flex justify-center h-full items-center content-center">
-        <div class="card shadow-xl w-60 h-60">
+        <div className="card shadow-xl w-60 h-60">
           <figure><img src="https://avatars.githubusercontent.com/u/22943555?v=4" alt='mypics'/></figure>
         </div>
       </div>
