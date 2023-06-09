@@ -2,7 +2,7 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="card bg-neutral mt-5 px-10 rounded-full mx-20 shadow-lg">
       <div className="flex-1">
         
       </div>
