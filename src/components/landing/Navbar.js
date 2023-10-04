@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -10,7 +10,6 @@ function Navbar() {
           <li><Link className='font-bold text-base' to='/gallery'>Project Gallery</Link></li>
         </ul>
       </div>
-      <Outlet />
     </div>
   )
 }
