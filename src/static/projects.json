@@ -1,0 +1,13 @@
+{
+  "projects": [
+    {
+      "pageId": "lang-id",
+      "title": "Word Level Language Identification",
+      "description": "Nowadays, user-generated texts in Indonesian especially that is taken from social media are written in code-mixed language. For more in depth analysis in language identification, we can detect the language in word level. This experiment demonstrates the NLP model for word level language identification using Conditional Random Field (CRF) method. The model was trained using code mixed Indonesian, Javanese, and English twitter data developed by [1]. The trained CRF model got about 90% accuracy, able to differenciate the language for each word but still weak on detecting the mixed language. The use if BERT-Based model has the possibility to improve the language detection.",
+      "iframeUrl": "https://portofolio-demos-sbathld7ya-et.a.run.app/?page=word-level-lang-id&embed=true&embed_options=dark_theme",
+      "references": [
+        "[1] Hidayatullah, Ahmad Fathan. (2022). Code-mixed Indonesian-Javanese-English Twitter Dataset (Version v1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7567573"
+      ]
+    }
+  ]
+}

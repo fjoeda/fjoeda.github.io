@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation'
 
 function Identity() {
   return (
-    <div className="flex flex-wrap content-center justify-center mt-20 pt-10 mx-auto mb-5 pb-5">
+    <div className="flex flex-wrap content-center justify-center mt-10 pt-5 mx-auto mb-5 pb-5">
       <div className="flex flex-col justify-center mt-auto pt-5">
         <div className="card rounded-lg w-60 h-60">
           <figure><img src="https://avatars.githubusercontent.com/u/22943555?v=4" alt='mypics'/></figure>
