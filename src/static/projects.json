@@ -8,6 +8,20 @@
       "references": [
         "[1] Hidayatullah, Ahmad Fathan. (2022). Code-mixed Indonesian-Javanese-English Twitter Dataset (Version v1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7567573"
       ]
+    },
+    {
+      "pageId": "climate-id",
+      "title": "Climate Change Media Analysis",
+      "description": "This is my collaborative projects while I was pursuing my master degree. I was assigned to do the media analysis on climate-related news from the Indonesian media outlets. I created this dashboard to show the content analysis of climate-related news taken from Indonesian mass media. There are two analysis, topic modelling with Bertopic and text network visualization with textnets. I used topic modelling to uncover the topics covered by the media, and text network visualization to get the deeper insight on what mostly talk about in the ceratin topic.",
+      "iframeUrl": "https://climate-change-media-analysis-dash-661990944024.australia-southeast1.run.app/?embed=true",
+      "references": []
+    },
+    {
+      "pageId": "mancala",
+      "title": "Mancala",
+      "description": "This was a group project from one of AI principal course. We were challenged to create a project that implemented greedy algorithm, hence we created a Mancala game. Mancala is a turn-based strategy board game with small stones and a hole. The objective is usually to capture all or some set of the opponent's pieces. In this game, we develop the opponent agent by implementing greedy algorithm, so that the agent were able to decide which stone should be taken from the pit to get the maximum score. We used streamlit so the UI was not as good as expected.",
+      "iframeUrl": "https://mancala-661990944024.asia-southeast2.run.app/?embed=true",
+      "references": []
     }
   ]
 }

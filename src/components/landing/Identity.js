@@ -17,16 +17,15 @@ function Identity() {
         <p className='text-xl font-normal mt-10'>
           My name is <span className='text-primary'>Faturahman Yudanto</span>. I do programming mostly with python
           to create a web backend, conversational chatbot, data science and ML notebook experiments, and some random stuffs. 
-          Currently, I'm working as backend developer and persuing master degree in arficitial intelligence.
+          Currently, I'm working as AI developer, taking some freelance projects, and recently graduated from
+          master program in arficitial intelligence at UGM.
         </p>
         <span className='text-xl font-normal'>
           <span>I'm quite familiar with </span>{' '}
           <TypeAnimation
             className='text-primary'
             sequence={[
-              'Django',
-              1000,
-              'Flask',
+              'Django, FastAPI',
               1000,
               'Pytorch',
               1000,
@@ -39,6 +38,8 @@ function Identity() {
               'Tableau',
               1000,
               'Natural Language Processing',
+              1000,
+              'Retrieval-augmented Generation',
               1000,
               'Image Processing',
               1000,
