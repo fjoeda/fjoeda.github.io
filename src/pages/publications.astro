@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = 'Publications | Faturahman Yudanto';
+const pageDescription =
+	'Recent publications and research interests in NLP, LLMs, and applied AI.';
+
+const researchInterests = [
+	'Natural Language Processing (NLP)',
+	'Large Language Models (LLMs)',
+	'Retrieval-Augmented Generation (RAG)',
+	'Natural Language Understanding (NLU)',
+	'Applied AI for healthcare, policy analysis, and engineering',
+];
+
+const publications = [
+	{
+		title: 'An Empirical Study of Retrieval-Augmented Generation for Corrective Maintenance',
+		authors: 'Yudanto, F., et al.',
+		venue: 'ASPEN 2025, Taiwan',
+		year: '2025',
+	},
+	{
+		title:
+			'Climate-NLI: A Model for Natural Language Inference and Zero-Shot Classification on Climate-Related Text',
+		authors: 'Yudanto, F., Sari, Y., & Zaki, M. Z. A. C.',
+		venue: 'PACLIC 38, Tokyo',
+		year: '2024',
+	},
+	{
+		title:
+			'Development of expert system for skin diseases based on named-entity recognition (NER) and fuzzy inference',
+		authors: 'Yudanto, F., et al.',
+		venue: 'AIP Conference Proceedings',
+		year: '2024',
+	},
+];
+
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<section class="mt-6 max-w-4xl animate-fade-up">
+		<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-amber-800">Academic profile</p>
+		<h1 class="m-0 text-5xl leading-none font-semibold tracking-[-0.08em] text-stone-950 sm:text-6xl lg:text-7xl">
+			Publications
+		</h1>
+		<p class="mt-5 text-lg leading-8 text-stone-700">
+			A snapshot of recent publication activity and active research directions.
+		</p>
+	</section>
+
+	<section class="mt-8 animate-fade-up [animation-delay:100ms]">
+		<div class="rounded-[1.8rem] border border-stone-900/10 bg-white/70 p-7 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur">
+			<h2 class="m-0 text-2xl font-semibold tracking-[-0.04em] text-stone-950">Research Interests</h2>
+			<ul class="mt-4 grid gap-2 pl-5 text-stone-700 md:grid-cols-2">
+				{
+					researchInterests.map((item) => (
+						<li>{item}</li>
+					))
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section class="mt-8 animate-fade-up [animation-delay:180ms]">
+		<h2 class="mb-4 text-3xl leading-tight font-semibold tracking-[-0.05em] text-stone-950">Recent Publications & Presented Works</h2>
+		<div class="grid gap-4">
+			{
+				publications.map((item) => (
+					<article class="rounded-[1.6rem] border border-stone-900/10 bg-white/75 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+						<p class="m-0 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-amber-800">{item.year}</p>
+						<h3 class="mt-2 mb-2 text-xl leading-tight font-semibold tracking-[-0.02em] text-stone-950">{item.title}</h3>
+						<p class="m-0 leading-7 text-stone-700">{item.authors}</p>
+						<p class="m-0 text-stone-700">{item.venue}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+</Layout>

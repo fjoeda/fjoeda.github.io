@@ -1,0 +1,35 @@
+---
+import Nav from '../components/Nav.astro';
+import "../styles/global.css";
+
+type Props = {
+	title?: string;
+	description?: string;
+};
+
+const {
+	title = 'Faturahman Yudanto | AI Developer',
+	description = 'Portfolio, project posts, and experiments by Faturahman Yudanto.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.7),transparent_28%),radial-gradient(circle_at_right_20%,rgba(180,83,9,0.12),transparent_26%),linear-gradient(180deg,#f3ecdf_0%,#efe8db_42%,#e7dcc5_100%)] font-sans text-stone-950 antialiased">
+		<div class="px-4 pb-16">
+			<Nav />
+			<main class="mx-auto max-w-6xl pt-7">
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>

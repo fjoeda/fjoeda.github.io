@@ -1,0 +1,30 @@
+---
+type Props = {
+	title: string;
+	excerpt: string;
+	href: string;
+	tags?: string[];
+	hasDemo?: boolean;
+};
+
+const { title, excerpt, href, tags = [], hasDemo = false } = Astro.props;
+---
+
+<article class="flex h-full flex-col gap-4 rounded-[1.8rem] border border-stone-900/10 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur transition hover:-translate-y-1 hover:bg-white/90">
+	<div class="flex items-center justify-between gap-3">
+		<p class="m-0 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-amber-800">Project Post</p>
+		{hasDemo && <span class="rounded-full bg-stone-900/6 px-2.5 py-1 text-[0.72rem] font-semibold text-stone-700">Live demo</span>}
+	</div>
+	<h2 class="m-0 text-2xl leading-tight font-semibold tracking-[-0.04em] text-stone-950">
+		<a class="no-underline" href={href}>{title}</a>
+	</h2>
+	<p class="m-0 leading-7 text-stone-700">{excerpt}</p>
+	{
+		tags.length > 0 && (
+			<div class="flex flex-wrap gap-2">
+				{tags.map((tag) => <span class="rounded-full bg-amber-800/8 px-2.5 py-1 text-xs text-stone-700">{tag}</span>)}
+			</div>
+		)
+	}
+	<a class="mt-auto text-sm font-semibold text-stone-900 no-underline" href={href}>Read project</a>
+</article>

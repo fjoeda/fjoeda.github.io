@@ -1,0 +1,37 @@
+---
+import { site } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+	href === '/' ? currentPath === '/' : currentPath === href || currentPath.startsWith(`${href}/`);
+---
+
+<nav class="site-nav" aria-label="Primary">
+	<div class="sticky top-3 z-10 flex justify-center px-4 pt-4 sm:top-4">
+		<div class="flex items-center gap-1 rounded-full border border-stone-900/10 bg-white/85 px-2 py-2 shadow-[0_8px_24px_rgba(15,23,42,0.06)] backdrop-blur">
+			<a
+				class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-[0.68rem] font-semibold tracking-[0.2em] text-stone-50 transition hover:bg-stone-700 focus-visible:bg-stone-700"
+				href="/"
+			>
+				FY
+			</a>
+			<ul class="flex items-center gap-1">
+			{
+				site.navItems.map((item) => (
+					<li>
+						<a
+							class:list={[
+								'inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium text-stone-500 transition hover:text-stone-900 focus-visible:text-stone-900',
+								{ 'text-stone-900': isActive(item.href) },
+							]}
+							href={item.href}
+						>
+							{item.label}
+						</a>
+					</li>
+				))
+			}
+			</ul>
+		</div>
+	</div>
+</nav>
