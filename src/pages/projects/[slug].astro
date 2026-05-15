@@ -30,13 +30,13 @@ const { Content } = markdownModule;
 
 <Layout title={`${project.data.title} | Projects`} description={project.data.description}>
 	<article class="mt-6 grid gap-6">
-		<header class="animate-fade-up rounded-[2rem] border border-stone-900/10 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur md:p-8">
-			<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-amber-800">Project post</p>
-			<h1 class="m-0 text-5xl leading-none font-semibold tracking-[-0.08em] text-stone-950 sm:text-6xl lg:text-7xl">{project.data.title}</h1>
-			<p class="mt-5 max-w-4xl text-lg leading-8 text-stone-700">{project.data.description}</p>
+		<header class="animate-fade-up rounded-[2rem] border border-gray-300 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur md:p-8">
+			<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Project post</p>
+			<h1 class="m-0 text-5xl leading-none font-semibold tracking-[-0.08em] text-black sm:text-6xl lg:text-7xl">{project.data.title}</h1>
+			<p class="mt-5 max-w-4xl text-lg leading-8 text-gray-700">{project.data.description}</p>
 			<div class="mt-5 flex flex-wrap gap-2">
 				{project.data.publishDate && (
-					<span class="rounded-full bg-stone-900/5 px-3 py-1.5 text-sm text-stone-700">
+					<span class="rounded-full bg-gray-200/30 px-3 py-1.5 text-sm text-gray-700">
 						{project.data.publishDate.toLocaleDateString('en-US', {
 							year: 'numeric',
 							month: 'long',
@@ -44,19 +44,19 @@ const { Content } = markdownModule;
 						})}
 					</span>
 				)}
-				{project.data.tags.map((tag) => <span class="rounded-full bg-stone-900/5 px-3 py-1.5 text-sm text-stone-700">{tag}</span>)}
+				{project.data.tags.map((tag) => <span class="rounded-full bg-gray-200/30 px-3 py-1.5 text-sm text-gray-700">{tag}</span>)}
 			</div>
 		</header>
 
 		{project.data.demoUrl && (
-			<section class="animate-fade-up rounded-[2rem] border border-stone-900/10 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:120ms] md:p-8">
+			<section class="animate-fade-up rounded-[2rem] border border-gray-300 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:120ms] md:p-8">
 				<div class="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 					<div>
-						<p class="mb-2 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-amber-800">Live demo</p>
-						<h2 class="m-0 text-2xl font-semibold tracking-[-0.04em] text-stone-950 sm:text-3xl">Interactive preview</h2>
+						<p class="mb-2 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Live demo</p>
+						<h2 class="m-0 text-2xl font-semibold tracking-[-0.04em] text-black sm:text-3xl">Interactive preview</h2>
 					</div>
 					<a
-						class="text-sm font-semibold text-stone-900 no-underline"
+						class="text-sm font-semibold text-black no-underline"
 						href={project.data.demoUrl}
 						target="_blank"
 						rel="noreferrer"
@@ -65,7 +65,7 @@ const { Content } = markdownModule;
 					</a>
 				</div>
 				<iframe
-					class="min-h-[24rem] w-full rounded-2xl border-0 bg-stone-200 md:min-h-[34rem]"
+					class="min-h-[24rem] w-full rounded-2xl border-0 bg-gray-200 md:min-h-[34rem]"
 					title={`${project.data.title} demo`}
 					src={project.data.demoUrl}
 					loading="lazy"
@@ -75,27 +75,27 @@ const { Content } = markdownModule;
 		)}
 
 		{project.data.screenshots.length > 0 && (
-			<section class="animate-fade-up rounded-[2rem] border border-stone-900/10 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:200ms] md:p-8">
-				<p class="mb-4 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-amber-800">Screenshots</p>
+			<section class="animate-fade-up rounded-[2rem] border border-gray-300 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:200ms] md:p-8">
+				<p class="mb-4 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Screenshots</p>
 				<div class="grid gap-4 md:grid-cols-2">
 					{project.data.screenshots.map((screenshot) => (
 						<figure class="m-0">
 							<img class="block w-full rounded-2xl" src={screenshot.src} alt={screenshot.alt} loading="lazy" />
-							<figcaption class="mt-2.5 text-sm text-stone-600">{screenshot.alt}</figcaption>
+							<figcaption class="mt-2.5 text-sm text-gray-700">{screenshot.alt}</figcaption>
 						</figure>
 					))}
 				</div>
 			</section>
 		)}
 
-		<section class="prose prose-stone max-w-none animate-fade-up rounded-[2rem] border border-stone-900/10 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:200ms] prose-headings:tracking-[-0.04em] prose-p:leading-8 prose-li:leading-8 md:p-8">
+		<section class="prose prose-stone max-w-none animate-fade-up rounded-[2rem] border border-gray-300 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:200ms] [&_h1]:tracking-[-0.04em] [&_h2]:tracking-[-0.04em] [&_h3]:tracking-[-0.04em] [&_h4]:tracking-[-0.04em] [&_li]:leading-8 [&_p+p]:mt-3 [&_p]:leading-8 md:p-8">
 			<Content />
 		</section>
 
 		{project.data.references.length > 0 && (
-			<section class="animate-fade-up rounded-[2rem] border border-stone-900/10 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:280ms] md:p-8">
-				<p class="mb-4 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-amber-800">References</p>
-				<ul class="ml-5 list-disc space-y-3 text-stone-700">
+			<section class="animate-fade-up rounded-[2rem] border border-gray-300 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:280ms] md:p-8">
+				<p class="mb-4 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">References</p>
+				<ul class="ml-5 list-disc space-y-3 text-gray-700">
 					{project.data.references.map((reference) => <li>{reference}</li>)}
 				</ul>
 			</section>

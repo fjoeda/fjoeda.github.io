@@ -42,25 +42,25 @@ const selectedProjects = [
 
 <Layout title={pageTitle} description={pageDescription}>
 	<section class="mt-6 max-w-4xl animate-fade-up">
-		<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-amber-800">Career profile</p>
-		<h1 class="m-0 text-5xl leading-none font-semibold tracking-[-0.08em] text-stone-950 sm:text-6xl lg:text-7xl">
+		<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Career profile</p>
+		<h1 class="m-0 text-5xl leading-none font-semibold tracking-[-0.08em] text-black sm:text-6xl lg:text-7xl">
 			Personal Experience
 		</h1>
-		<p class="mt-5 text-lg leading-8 text-stone-700">
+		<p class="mt-5 text-lg leading-8 text-gray-700">
 			Research and professional experience delivering practical AI systems in real-world environments.
 		</p>
 	</section>
 
 	<section class="mt-10 animate-fade-up [animation-delay:140ms]">
-		<h2 class="mb-4 text-3xl leading-tight font-semibold tracking-[-0.05em] text-stone-950">Research & Professional Experience</h2>
+		<h2 class="mb-4 text-3xl leading-tight font-semibold tracking-[-0.05em] text-black">Research & Professional Experience</h2>
 		<div class="grid gap-4">
 			{
 				experiences.map((job) => (
-					<article class="rounded-[1.6rem] border border-stone-900/10 bg-white/75 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-						<p class="m-0 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-amber-800">{job.period}</p>
-						<h3 class="mt-2 mb-1 text-xl font-semibold tracking-[-0.02em] text-stone-950">{job.role}</h3>
-						<p class="m-0 text-stone-700">{job.company}</p>
-						<ul class="mt-3 pl-5 leading-7 text-stone-700">
+					<article class="rounded-[1.6rem] border border-gray-300 bg-white/75 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+						<p class="m-0 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-black">{job.period}</p>
+						<h3 class="mt-2 mb-1 text-xl font-semibold tracking-[-0.02em] text-black">{job.role}</h3>
+						<p class="m-0 text-gray-700">{job.company}</p>
+						<ul class="mt-3 pl-5 leading-7 text-gray-700">
 							{
 								job.highlights.map((point) => (
 									<li>{point}</li>

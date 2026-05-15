@@ -12,8 +12,10 @@ demoUrl: https://climate-change-media-analysis-dash-661990944024.australia-south
 references: []
 ---
 
-This was a collaborative project during my master's degree. My contribution focused on media analysis for climate-related coverage from Indonesian outlets.
+This project began with a simple question: how is climate change actually framed in Indonesian news, beyond headline impressions?
 
-I built a dashboard that highlights two complementary perspectives. The first is topic modeling with BERTopic to surface the major themes covered by the media. The second is text-network visualization to show how concepts connect inside a topic and what the reporting tends to emphasize.
+As part of a collaborative research effort during my master's degree, I led the media-analysis side and built an interactive dashboard to make those patterns visible. I combined BERTopic-based topic modeling with text-network analysis so users could move from broad themes to the relationships between key concepts inside each theme.
 
-The result is a more inspectable view of climate-news discourse than a simple article archive. It helps answer both what the media is talking about and how that conversation is structured.
+The dashboard offers two layers of insight. Topic modeling reveals what outlets discuss most often, while the network view shows how words cluster, which ideas are central, and what narratives receive the strongest emphasis.
+
+By turning a large article collection into a structured, explorable map of discourse, the project makes climate coverage easier to inspect, compare, and communicate.

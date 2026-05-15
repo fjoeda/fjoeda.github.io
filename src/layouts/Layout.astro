@@ -24,9 +24,9 @@ const {
 		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.7),transparent_28%),radial-gradient(circle_at_right_20%,rgba(180,83,9,0.12),transparent_26%),linear-gradient(180deg,#f3ecdf_0%,#efe8db_42%,#e7dcc5_100%)] font-sans text-stone-950 antialiased">
+	<body class="min-h-screen font-sans text-black antialiased">
+		<Nav />
 		<div class="px-4 pb-16">
-			<Nav />
 			<main class="mx-auto max-w-6xl pt-7">
 				<slot />
 			</main>

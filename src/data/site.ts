@@ -23,11 +23,11 @@ export const site = {
 		{ label: 'Home', href: '/' },
 		{ label: 'Projects', href: '/projects' },
 		{ label: 'Publications', href: '/publications' },
-		{ label: 'Experience', href: '/experience' },
+		// { label: 'Experience', href: '/experience' },
 	],
 	socialLinks: [
 		{ label: 'GitHub', href: 'https://www.github.com/fjoeda' },
-		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/faturahman-yudanto-218016181/' },
+		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/fyudanto/' },
 		{ label: 'X', href: 'https://twitter.com/fjoeda' },
 		{ label: 'Email', href: 'mailto:f.yudanto@mail.ugm.ac.id' },
 		{ label: 'Scholar', href: 'https://scholar.google.com/citations?user=naZctIoAAAAJ&hl=en' },

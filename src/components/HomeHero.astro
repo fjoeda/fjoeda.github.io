@@ -1,7 +1,16 @@
 ---
 import { site } from '../data/site';
+import { icon } from '@fortawesome/fontawesome-svg-core';
+import { faGithub, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faGraduationCap, faLink } from '@fortawesome/free-solid-svg-icons';
 
-const primaryContact = site.socialLinks.find((link) => link.label === 'Email')?.href ?? '#';
+const socialIcons = {
+	GitHub: faGithub,
+	LinkedIn: faLinkedinIn,
+	X: faXTwitter,
+	Email: faEnvelope,
+	Scholar: faGraduationCap,
+} as const;
 ---
 
 <section class="mx-auto mt-10 flex max-w-4xl animate-fade-up flex-col items-center text-center">
@@ -16,27 +25,42 @@ const primaryContact = site.socialLinks.find((link) => link.label === 'Email')?.
 		</div>
 
 		<div class="space-y-4">
-			<p class="text-lg text-stone-500">Hello, I'm</p>
-			<h1 class="m-2 text-5xl leading-none font-semibold tracking-[-0.08em] text-stone-950 sm:text-6xl lg:text-7xl">
+			<p class="text-lg text-gray-600">Hello, I'm</p>
+			<h1 class="m-2 text-3xl leading-none font-semibold tracking-[-0.08em] text-black sm:text-5xl lg:text-6xl">
 				{site.title}
 			</h1>
-			<p class="mx-auto max-w-3xl text-lg leading-9 text-stone-700 sm:text-xl">
+			<p class="mx-auto max-w-3xl text-lg leading-9 text-gray-700 pt-5 sm:text-lg">
 				{site.intro}
 			</p>
 		</div>
 
-		<div class="mt-2 flex w-full max-w-md flex-col justify-center gap-3 sm:flex-row">
+		<div class="mt-2 flex w-full flex-col items-center gap-4">
+			<div class="flex flex-wrap justify-center gap-3">
+				{site.socialLinks.map((link) => {
+					const socialIcon = socialIcons[link.label as keyof typeof socialIcons] ?? faLink;
+
+					return (
+						<a
+							class="inline-flex items-center gap-2 rounded-full border border-gray-400/30 bg-white/70 px-4 py-2.5 text-sm font-semibold text-gray-800 transition hover:-translate-y-0.5 hover:border-gray-400/50 hover:bg-white"
+							href={link.href}
+							target={link.href.startsWith('http') ? '_blank' : undefined}
+							rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+						>
+							<span
+								class="inline-flex h-4 w-4 items-center justify-center"
+								aria-hidden="true"
+								set:html={icon(socialIcon, { classes: 'h-4 w-4' }).html.join('')}
+							/>
+							<span>{link.label}</span>
+						</a>
+					);
+				})}
+			</div>
 			<a
-				class="inline-flex items-center justify-center rounded-full bg-stone-950 px-6 py-3.5 text-base font-semibold text-stone-50 transition hover:-translate-y-0.5 hover:bg-stone-800"
+				class="inline-flex items-center justify-center rounded-full bg-black px-6 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-gray-800"
 				href="/projects"
 			>
 				View Projects
-			</a>
-			<a
-				class="inline-flex items-center justify-center rounded-full border border-stone-900/15 bg-white/70 px-6 py-3.5 text-base font-semibold text-stone-800 transition hover:-translate-y-0.5 hover:border-stone-900/25 hover:bg-white"
-				href={primaryContact}
-			>
-				Get in Touch
 			</a>
 		</div>
 	</div>

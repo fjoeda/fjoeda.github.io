@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-	--font-sans: "Sora", "Segoe UI", sans-serif;
+	--font-sans: "Plus Jakarta Sans", "Segoe UI", sans-serif;
 	--animate-fade-up: fade-up 540ms ease both;
 }
 

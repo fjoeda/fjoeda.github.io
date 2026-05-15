@@ -22,4 +22,15 @@ const projects = defineCollection({
 	}),
 });
 
-export const collections = { projects };
+const publication = defineCollection({
+	loader: glob({ pattern: '**/*.md', base: new URL('./content/publication', import.meta.url) }),
+	schema: z.object({
+		title: z.string(),
+		authors: z.array(z.string()).default([]),
+		year: z.coerce.number().int(),
+		link: z.preprocess((value) => (value == null || value === '' ? undefined : value), z.string().url().optional()),
+		presentedAt: z.string().optional(),
+	}),
+});
+
+export const collections = { projects, publication };

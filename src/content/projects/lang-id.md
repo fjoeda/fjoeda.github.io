@@ -13,8 +13,10 @@ references:
   - Hidayatullah, Ahmad Fathan. (2022). Code-mixed Indonesian-Javanese-English Twitter Dataset (Version v1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7567573
 ---
 
-Nowadays, user-generated Indonesian social-media text is often written in a code-mixed form. This project explores language identification at the word level so each token can be labeled as Indonesian, Javanese, or English.
+Code-mixing is common in Indonesian social media, where Indonesian, Javanese, and English can appear in the same sentence. This project started from that challenge: identifying the language of each word, not just the language of the whole post.
 
-The model was trained with code-mixed Twitter data and implemented using Conditional Random Field (CRF). The result reached roughly 90% accuracy and was able to separate the language of individual words reasonably well, although mixed-language patterns are still the hardest edge case.
+I built a word-level language identification pipeline using a Conditional Random Field (CRF) model trained on a code-mixed Twitter dataset. The model learns token-level patterns from surrounding context, then assigns each token to Indonesian, Javanese, or English.
 
-This experiment became a useful baseline for thinking about richer sequence models. A BERT-based approach is the most obvious next step if the goal shifts from proof of concept to stronger robustness on ambiguous or highly mixed text.
+The system achieved around 90% accuracy and performed well on clearer boundaries between languages. The hardest cases were highly blended phrases where context and spelling cues overlap.
+
+This work serves as a strong baseline for sequence labeling in low-resource, code-mixed settings, and it points naturally to transformer-based follow-ups such as BERT for better robustness on ambiguous text.

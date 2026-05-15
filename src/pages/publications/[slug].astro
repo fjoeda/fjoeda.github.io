@@ -1,0 +1,59 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const publications = await getCollection('publication');
+
+	return publications.map((publication) => ({
+		params: { slug: publication.id },
+		props: { publicationId: publication.id },
+	}));
+}
+
+type Props = {
+	publicationId: string;
+};
+
+const { publicationId } = Astro.props;
+const publication = await getEntry('publication', publicationId);
+const markdownModules = import.meta.glob('/src/content/publication/*.md');
+const markdownModuleLoader = markdownModules[`/src/content/publication/${publicationId}.md`];
+
+if (!publication || !markdownModuleLoader) {
+	return Astro.redirect('/publications');
+}
+
+const markdownModule = await markdownModuleLoader();
+const { Content } = markdownModule;
+---
+
+<Layout title={`${publication.data.title} | Publications`} description={publication.data.presentedAt ?? 'Publication abstract and details.'}>
+	<article class="mt-6 grid gap-6">
+		<header class="animate-fade-up rounded-[2rem] border border-gray-300 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur md:p-8">
+			<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Publication</p>
+			<h1 class="m-0 text-3xl leading-none font-semibold tracking-[-0.08em] text-black sm:text-4xl lg:text-5xl">{publication.data.title}</h1>
+			<div class="mt-5 flex flex-wrap gap-2">
+				<span class="rounded-full bg-gray-200/30 px-3 py-1.5 text-sm text-gray-700">{publication.data.year}</span>
+				{publication.data.presentedAt && <span class="rounded-full bg-gray-200/30 px-3 py-1.5 text-sm text-gray-700">{publication.data.presentedAt}</span>}
+			</div>
+			{publication.data.authors.length > 0 && (
+				<p class="mt-5 max-w-4xl text-lg leading-8 text-gray-700">{publication.data.authors.join(', ')}</p>
+			)}
+			{publication.data.link && (
+				<a class="mt-4 inline-flex text-sm font-semibold text-black no-underline" href={publication.data.link} target="_blank" rel="noreferrer">
+					Open external link
+				</a>
+			)}
+		</header>
+
+		<section class="prose prose-stone max-w-none animate-fade-up rounded-[2rem] border border-gray-300 bg-white/70 p-6 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur [animation-delay:120ms] [&_h1]:tracking-[-0.04em] [&_h2]:tracking-[-0.04em] [&_h3]:tracking-[-0.04em] [&_h4]:tracking-[-0.04em] [&_li]:leading-8 [&_p+p]:mt-3 [&_p]:leading-8 md:p-8">
+			<p class="text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Abstract</p>
+			<Content />
+		</section>
+
+		<div class="animate-fade-up [animation-delay:180ms]">
+			<a class="text-sm font-semibold text-black no-underline" href="/publications/">Back to publications</a>
+		</div>
+	</article>
+</Layout>

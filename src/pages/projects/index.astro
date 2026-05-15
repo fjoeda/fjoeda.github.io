@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ProjectCard from '../../components/ProjectCard.astro';
+import PageIntro from '../../components/PageIntro.astro';
 import { projectIndexIntro } from '../../data/site';
 import Layout from '../../layouts/Layout.astro';
 
@@ -11,14 +12,12 @@ const projects = (await getCollection('projects')).sort((left, right) => {
 });
 ---
 
-<Layout title="Projects | Faturahman Yudanto" description={projectIndexIntro}>
-	<section class="mt-6 max-w-4xl animate-fade-up">
-		<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-amber-800">Projects</p>
-		<h1 class="m-0 text-5xl leading-none font-semibold tracking-[-0.08em] text-stone-950 sm:text-6xl lg:text-7xl">
-			Project posts instead of a gallery wall.
-		</h1>
-		<p class="mt-5 text-lg leading-8 text-stone-700">{projectIndexIntro}</p>
-	</section>
+<Layout title="Projects | Faturahman Yudanto" description="A selection of recent projects, experiments, and write-ups related to AI development and research.">
+	<PageIntro
+		eyebrow="Portfolio"
+		title="Projects"
+		description="A selection of recent projects, experiments, and write-ups related to AI development and research."
+	/>
 
 	<section class="mt-8 grid animate-fade-up gap-4 [animation-delay:120ms] md:grid-cols-2 xl:grid-cols-3">
 		{
@@ -33,7 +32,7 @@ const projects = (await getCollection('projects')).sort((left, right) => {
 					/>
 				))
 			) : (
-				<p class="rounded-[1.8rem] border border-stone-900/10 bg-white/70 p-6 text-stone-700 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur md:col-span-2 xl:col-span-3">
+				<p class="rounded-[1.8rem] border border-gray-300 bg-white/70 p-6 text-gray-700 shadow-[0_24px_60px_rgba(34,40,35,0.08)] backdrop-blur md:col-span-2 xl:col-span-3">
 					No project posts found yet. Add markdown files in <code>src/content/projects</code> to populate this page.
 				</p>
 			)

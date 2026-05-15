@@ -11,8 +11,6 @@ demoUrl: https://mancala-661990944024.asia-southeast2.run.app/?embed=true
 references: []
 ---
 
-This was a group project from an AI fundamentals course. The goal was to build something that used a greedy algorithm in a concrete and understandable way, so we chose Mancala.
+This project came from an AI fundamentals course challenge: build a playable agent that demonstrates a core search idea in a way people can immediately understand. Our team chose Mancala because each move has a clear, measurable short-term payoff, making it a natural fit for a greedy strategy. The agent evaluates available moves by immediate score impact, then selects the option with the highest direct gain.
 
-Mancala is a turn-based strategy game where move quality can be estimated directly from the immediate score effect of selecting a pit. That made it a good fit for a greedy agent that evaluates the next move and chooses the best short-term gain.
-
-We used Streamlit for the interface, so the visual layer was simple, but the project was a practical exercise in turning a textbook heuristic into a playable opponent.
+I helped translate that simple heuristic into a working game loop and interactive demo. We used Streamlit to keep the interface lightweight so the focus stayed on decision behavior rather than visual complexity. The result was a practical bridge between theory and implementation: a textbook greedy algorithm turned into an opponent that users can play against and inspect move by move.
