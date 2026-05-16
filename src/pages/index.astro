@@ -1,0 +1,45 @@
+---
+import HomeHero from '../components/HomeHero.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../data/site';
+import Layout from '../layouts/Layout.astro';
+
+const projectPosts = (await getCollection('projects'))
+	.sort((left, right) => {
+		const leftTime = left.data.publishDate?.getTime() ?? 0;
+		const rightTime = right.data.publishDate?.getTime() ?? 0;
+		return rightTime - leftTime;
+	})
+	.slice(0, 2);
+---
+
+<Layout title={`${site.title} | AI Developer`} description={site.description}>
+	<HomeHero />
+
+	<!-- <section class="mx-auto mt-20 max-w-5xl animate-fade-up [animation-delay:220ms]">
+		<div class="mb-8 text-center">
+			<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Selected writing</p>
+			<h2 class="m-0 text-3xl leading-tight font-semibold tracking-[-0.05em] text-stone-950 sm:text-4xl">Recent project posts</h2>
+		</div>
+		<div class="grid gap-4 md:grid-cols-2">
+			{
+				projectPosts.map((project) => (
+					<a
+						class="flex flex-col gap-3 rounded-[1.6rem] border border-stone-900/10 bg-white/75 p-6 text-left text-stone-950 no-underline shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:-translate-y-1 hover:bg-white"
+						href={`/projects/${project.id}/`}
+					>
+						<p class="m-0 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-black">
+							{project.data.publishDate?.toLocaleDateString('en-US', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric',
+							}) ?? 'Project post'}
+						</p>
+						<h3 class="m-0 text-2xl leading-tight font-semibold tracking-[-0.04em]">{project.data.title}</h3>
+						<p class="m-0 leading-7 text-stone-700">{project.data.excerpt}</p>
+					</a>
+				))
+			}
+		</div>
+	</section> -->
+</Layout>

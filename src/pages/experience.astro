@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = 'Experience | Faturahman Yudanto';
+const pageDescription =
+	'Research and professional experience across applied AI, NLP, and production ML systems.';
+
+const experiences = [
+	{
+		role: 'AI Engineer',
+		company: 'PT Kedata Indonesia Digital',
+		period: 'January 2025 - Present',
+		highlights: [
+			'Fine-tuned BERT-based models for text classification, named entity recognition, and information retrieval.',
+			'Implemented local LLM pipelines for document understanding and automated summarization.',
+		],
+	},
+	{
+		role: 'Machine Learning Engineer',
+		company: 'PT Kereta Api Indonesia (Persero)',
+		period: 'July 2021 - Present',
+		highlights: [
+			'Worked on rolling stock maintenance analytics and wheel-related predictive modeling.',
+		],
+	},
+];
+
+const selectedProjects = [
+	{
+		name: 'Wheel Diameter Analytics API',
+		stack: 'Python, FastAPI, Scikit-Learn',
+		description:
+			'Predictive service for wheel flange wear and remaining useful life to support maintenance planning.',
+	},
+	{
+		name: 'Prism',
+		stack: 'Python, Streamlit, Ollama, Sentence Transformers',
+		description: 'RAG workflow on rolling stock manual documents for faster technical information retrieval.',
+	},
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<section class="mt-6 max-w-4xl animate-fade-up">
+		<p class="mb-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-black">Career profile</p>
+		<h1 class="m-0 text-5xl leading-none font-semibold tracking-[-0.08em] text-black sm:text-6xl lg:text-7xl">
+			Personal Experience
+		</h1>
+		<p class="mt-5 text-lg leading-8 text-gray-700">
+			Research and professional experience delivering practical AI systems in real-world environments.
+		</p>
+	</section>
+
+	<section class="mt-10 animate-fade-up [animation-delay:140ms]">
+		<h2 class="mb-4 text-3xl leading-tight font-semibold tracking-[-0.05em] text-black">Research & Professional Experience</h2>
+		<div class="grid gap-4">
+			{
+				experiences.map((job) => (
+					<article class="rounded-[1.6rem] border border-gray-300 bg-white/75 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+						<p class="m-0 text-[0.72rem] font-bold uppercase tracking-[0.2em] text-black">{job.period}</p>
+						<h3 class="mt-2 mb-1 text-xl font-semibold tracking-[-0.02em] text-black">{job.role}</h3>
+						<p class="m-0 text-gray-700">{job.company}</p>
+						<ul class="mt-3 pl-5 leading-7 text-gray-700">
+							{
+								job.highlights.map((point) => (
+									<li>{point}</li>
+								))
+							}
+						</ul>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10 animate-fade-up [animation-delay:220ms]">
+		<h2 class="mb-4 text-3xl leading-tight font-semibold tracking-[-0.05em] text-stone-950">Selected Research & Applied Projects</h2>
+		<div class="grid gap-4 md:grid-cols-2">
+			{
+				selectedProjects.map((project) => (
+					<article class="rounded-[1.6rem] border border-stone-900/10 bg-white/75 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+						<h3 class="m-0 text-xl font-semibold tracking-[-0.02em] text-stone-950">{project.name}</h3>
+						<p class="mt-2 mb-0 text-sm font-medium uppercase tracking-[0.12em] text-amber-800">{project.stack}</p>
+						<p class="mt-3 mb-0 leading-7 text-stone-700">{project.description}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+</Layout>
